@@ -39,24 +39,20 @@ namespace api.Shared.Domain
         public async Task Update(T instance)
         {
             if (instance.Id == 0)
-                return;
+                throw new InvalidRegistryExecption();
 
             _provider.Update(instance);
             await _context.SaveChangesAsync();
         }
 
-        public async Task Delete(T instance)
+        public async Task Delete(int id)
         {
-            if (instance.IsDeleted == true)
-            {
-                _provider.Remove(instance);
-                await _context.SaveChangesAsync();
-                return;
-            }
+            var entity = await _provider.SingleAsync( entity => entity.Id == id);
 
-            instance.IsDeleted = true;
-            _provider.Update(instance);
+            if (entity == null)
+                throw new RegistryNotFoundException();
 
+            _provider.Remove(entity);
             await _context.SaveChangesAsync();
         }
     }

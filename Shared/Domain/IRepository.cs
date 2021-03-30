@@ -8,6 +8,6 @@ namespace api.Shared.Domain
         Task<T[]> GetAll();
         Task Create(T instance);
         Task Update(T instance);
-        Task Delete(T instance);
+        Task Delete(int id);
     }
 }
