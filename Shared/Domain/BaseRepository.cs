@@ -51,8 +51,15 @@ namespace api.Shared.Domain
 
             if (entity == null)
                 throw new RegistryNotFoundException();
+            
+            if (entity.IsDeleted == true)
+                _provider.Remove(entity);
+            else
+            {
+                entity.IsDeleted = true;
+                _provider.Update(entity);   
+            }
 
-            _provider.Remove(entity);
             await _context.SaveChangesAsync();
         }
     }
