@@ -45,7 +45,7 @@ namespace api.Shared.Infrastructure
             {
                 await _repository.Update(instance);
             }
-            catch (InvalidRegistryExecption)
+            catch (RegistryNotFoundException)
             {
                 return NotFound("Invalid Id");
             }
