@@ -7,8 +7,8 @@ namespace api.Shared.Domain
 {
     public abstract class BaseRepository<T> : IRepository<T> where T : BaseEntity
     {
-        private readonly PContext _context;
-        private readonly DbSet<T> _provider;
+        public readonly PContext _context;
+        public readonly DbSet<T> _provider;
         public BaseRepository(PContext context, DbSet<T> provider)
         {
             _context = context;
