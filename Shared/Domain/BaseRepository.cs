@@ -53,10 +53,12 @@ namespace api.Shared.Domain
                 throw new RegistryNotFoundException();
             
             if (entity.IsDeleted == true)
+            {
                 _provider.Remove(entity);
+            }
             else
             {
-                entity.IsDeleted = true;
+                entity.Delete();
                 _provider.Update(entity);   
             }
 

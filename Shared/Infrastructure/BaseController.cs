@@ -38,9 +38,8 @@ namespace api.Shared.Infrastructure
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] T instance)
+        public async Task<IActionResult> Update([FromBody] T instance)
         {   
-            instance.Id = id;
             try
             {
                 await _repository.Update(instance);
