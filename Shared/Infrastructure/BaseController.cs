@@ -7,9 +7,9 @@ namespace api.Shared.Infrastructure
 {
     public abstract class BaseController<T> : Controller where T : BaseEntity
     {
-        private readonly IRepository<T> _repository;
+        private readonly ICRUDRepository<T> _repository;
 
-        protected BaseController(IRepository<T> repository)
+        protected BaseController(ICRUDRepository<T> repository)
         {
             _repository = repository;
         }
@@ -26,7 +26,6 @@ namespace api.Shared.Infrastructure
         public async Task<IActionResult> Get(int id)
         {
             var result = await _repository.Get(id);
-
             return Ok(result);
         }
 

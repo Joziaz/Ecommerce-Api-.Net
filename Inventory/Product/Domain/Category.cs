@@ -1,6 +1,6 @@
 using api.Shared.Domain;
 
-namespace api.Products.Domain
+namespace api.Inventory.Domain
 {
     public class Category : BaseEntity
     {
