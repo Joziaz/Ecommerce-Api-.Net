@@ -9,7 +9,7 @@ namespace api.Products.Infrastructure.Persistance
 {
     public class ProductRepository : CRUDRepository<Product>, IProductRepository
     {
-        public ProductRepository(PContext context, DbSet<Product> provider) : base(context, provider)
+        public ProductRepository(PContext context, DbSet<Product> provider) : base(context)
         {
         }
 

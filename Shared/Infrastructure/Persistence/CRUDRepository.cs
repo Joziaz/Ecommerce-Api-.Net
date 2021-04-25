@@ -8,13 +8,12 @@ namespace api.Products.Infrastructure.Persistance
     public abstract class CRUDRepository<T> : ICRUDRepository<T> where T : BaseEntity
     {
         
-        public readonly DbSet<T> _provider;
-        public readonly DbContext _context;
+        protected readonly DbContext _context;
+        protected DbSet<T> _provider => _context.Set<T>();
 
-        public CRUDRepository(DbContext context,DbSet<T> provider)
+        public CRUDRepository(DbContext context)
         {
             _context = context;
-            _provider = provider;
         }
 
         public async Task<T> Get(int id)
