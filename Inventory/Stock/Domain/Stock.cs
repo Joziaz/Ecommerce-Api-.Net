@@ -13,7 +13,7 @@ namespace api.Inventory.Domain
             Quantity = quantity;
         }
 
-        public void StockExit(int quantity)
+        public void SubstractStock(int quantity)
         {
             if (Quantity < quantity)
                 throw new NotEnoughStockException("Not enough in stock to complete you order");
@@ -21,7 +21,7 @@ namespace api.Inventory.Domain
             Quantity -= quantity;
         }
 
-        public void StockUp(int quantity)
+        public void AddToStock(int quantity)
         {
             Quantity += quantity;
         }
