@@ -7,7 +7,7 @@ namespace api.Inventory.Application
     public class StockService
     {
         protected readonly StockRepository _repository;
-        public async Task AddToStock(Product product, int quantity)
+        public async Task AddToStock(Product product, uint quantity)
         {
             var stock = await _repository.GetByProduct(product);
             stock.AddToStock(quantity);
@@ -15,7 +15,7 @@ namespace api.Inventory.Application
 
         }
 
-        public async Task SubstractStock(Product product, int quantity)
+        public async Task SubstractStock(Product product, uint quantity)
         {
             var stock = await _repository.GetByProduct(product);
             stock.SubstractStock(quantity);

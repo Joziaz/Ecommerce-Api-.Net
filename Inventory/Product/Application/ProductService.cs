@@ -25,18 +25,21 @@ namespace api.Inventory.Application
 
         }
 
-        public async Task AddToStock(Product product, int quantity)
+        public async Task DeleteProduct(Product product)
         {
             var stock = await Unit.StockRepository.GetByProduct(product);
-            stock.AddToStock(quantity);
-            await Unit.StockRepository.Update(stock);
-        }
 
-        public async Task SubstractStock(Product product, int quantity)
-        {
-            var stock = await Unit.StockRepository.GetByProduct(product);
-            stock.SubstractStock(quantity);
-            await Unit.StockRepository.Update(stock);
+            await Unit.BeginTransaction();
+            try
+            {
+                await Unit.ProductRepository.Delete(product.Id);
+                
+            }
+            catch (System.Exception)
+            {
+                
+                throw;
+            }
         }
     }
 }
