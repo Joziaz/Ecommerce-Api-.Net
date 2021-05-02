@@ -25,21 +25,5 @@ namespace api.Inventory.Application
 
         }
 
-        public async Task DeleteProduct(Product product)
-        {
-            var stock = await Unit.StockRepository.GetByProduct(product);
-
-            await Unit.BeginTransaction();
-            try
-            {
-                await Unit.ProductRepository.Delete(product.Id);
-                
-            }
-            catch (System.Exception)
-            {
-                
-                throw;
-            }
-        }
     }
 }
