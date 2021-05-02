@@ -4,8 +4,8 @@ namespace api.Products.Infrastructure.Persistance
 {
     public class UnitOfProducts : UnitOfWork
     {
-        public readonly IProductRepository Product;
-        public readonly IStockRepository Stock;
+        public readonly IProductRepository ProductRepository;
+        public readonly IStockRepository StockRepository;
         
     }
 }
