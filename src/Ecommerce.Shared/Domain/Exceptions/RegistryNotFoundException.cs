@@ -1,6 +1,4 @@
-using System.Runtime.ExceptionServices;
 using System;
-using System.Runtime.Serialization;
 
 namespace Ecommerce.Shared.Domain.Exeptions
 {

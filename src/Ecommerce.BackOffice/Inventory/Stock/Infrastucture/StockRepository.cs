@@ -1,9 +1,8 @@
 using Ecommerce.BackOffice.Inventory.Domain;
 using Ecommerce.Shared.Domain.Exeptions;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System.Threading.Tasks;
 using Ecommerce.Shared.Infrastructure.Persistance;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace Ecommerce.BackOffice.Inventory.Infrastucture
 {

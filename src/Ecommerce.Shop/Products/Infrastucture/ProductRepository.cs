@@ -1,10 +1,11 @@
-using Ecommerce.BackOffice.Inventory.Domain;
 using Ecommerce.Shared.Infrastructure.Persistance;
+using Ecommerce.Shop.Domain;
+using Ecommerce.Shop.Products.Domain;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Ecommerce.BackOffice.Infrastructure.Persistance
+namespace Ecommerce.Shop.Infrastructure.Persistance
 {
     public class ProductRepository : CRUDRepository<Product>, IProductRepository
     {

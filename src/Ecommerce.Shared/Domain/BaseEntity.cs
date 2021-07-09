@@ -8,7 +8,7 @@ namespace Ecommerce.Shared.Domain
         public bool IsDeleted { get; private set; }
 
         public DateTime Created { get; private set; }
-        
+
         public DateTime Modified { get; private set; }
 
         public void Delete()
@@ -21,7 +21,7 @@ namespace Ecommerce.Shared.Domain
             if (Created == null)
                 Created = DateTime.Now;
         }
-        
+
         public void SetModifiedDate()
         {
             Modified = DateTime.Now;

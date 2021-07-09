@@ -1,13 +1,13 @@
-using System.Threading.Tasks;
 using Ecommerce.Shared.Domain;
 using Ecommerce.Shared.Domain.Exeptions;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace Ecommerce.Shared.Infrastructure.Persistance
 {
     public abstract class CRUDRepository<T> : ICRUDRepository<T> where T : BaseEntity
     {
-        
+
         protected readonly DbContext _context;
         protected DbSet<T> _provider => _context.Set<T>();
 
@@ -22,7 +22,7 @@ namespace Ecommerce.Shared.Infrastructure.Persistance
 
             if (result == null)
                 throw new RegistryNotFoundException("Registry Not found");
-            
+
             return result;
         }
 
@@ -34,8 +34,8 @@ namespace Ecommerce.Shared.Infrastructure.Persistance
         {
             if (instance.Id == 0)
                 throw new InvalidRegistryExecption("Invalid Registry");
-            
-            instance.SetCreatedDate(); 
+
+            instance.SetCreatedDate();
             await _provider.AddAsync(instance);
             await _context.SaveChangesAsync();
         }
@@ -46,8 +46,8 @@ namespace Ecommerce.Shared.Infrastructure.Persistance
 
             if (entity == null)
                 throw new RegistryNotFoundException("Registry Not found");
-            
-            entity.SetModifiedDate();            
+
+            entity.SetModifiedDate();
             _provider.Remove(entity);
             await _context.SaveChangesAsync();
         }
@@ -57,7 +57,7 @@ namespace Ecommerce.Shared.Infrastructure.Persistance
             if (instance.Id == 0)
                 throw new InvalidRegistryExecption("Invalid Registry");
 
-            instance.SetModifiedDate();            
+            instance.SetModifiedDate();
             _provider.Update(instance);
             await _context.SaveChangesAsync();
 

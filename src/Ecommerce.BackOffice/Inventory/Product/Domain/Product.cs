@@ -21,6 +21,8 @@ namespace Ecommerce.BackOffice.Inventory.Domain
         {
             if (discount >= Price)
                 throw new DiscountPriceInvalid("the discount price can't be gather or equal to the normal price");
-        } 
+
+            DiscountPrice = discount;
+        }
     }
 }

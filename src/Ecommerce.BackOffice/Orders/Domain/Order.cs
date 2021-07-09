@@ -1,12 +1,6 @@
-﻿using Ecommerce.BackOffice.Inventory.Domain;
-using Ecommerce.Shared.Domain;
+﻿using Ecommerce.Shared.Domain;
 using Ecommerce.Shared.Domain.Enums;
-using Ecommerce.Shared.Domain.Exeptions;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ecommerce.BackOffice.Orders.Domain
 {

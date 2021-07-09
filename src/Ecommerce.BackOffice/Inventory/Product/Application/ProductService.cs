@@ -1,5 +1,5 @@
-using Ecommerce.BackOffice.Inventory.Domain;
 using Ecommerce.BackOffice.Infrastructure.Persistance;
+using Ecommerce.BackOffice.Inventory.Domain;
 using System.Threading.Tasks;
 
 namespace Ecommerce.BackOffice.Inventory.Application

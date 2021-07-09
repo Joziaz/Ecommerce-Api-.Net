@@ -1,8 +1,8 @@
-﻿using Ecommerce.BackOffice.Orders.Domain;
-using Ecommerce.Shared.Infrastructure.Persistance;
+﻿using Ecommerce.Shared.Infrastructure.Persistance;
+using Ecommerce.Shop.Orders.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace Ecommerce.BackOffice.Orders.Infrastucture
+namespace Ecommerce.Shop.Orders.Infrastucture
 {
     public class OrderRepository : CRUDRepository<Order>
     {

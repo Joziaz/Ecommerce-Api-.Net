@@ -2,11 +2,8 @@
 using Ecommerce.Shared.Domain.Enums;
 using Ecommerce.Shared.Domain.Exeptions;
 using Ecommerce.Shop.Products.Domain;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ecommerce.Shop.Orders.Domain
 {

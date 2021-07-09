@@ -1,6 +1,6 @@
-using System.Threading.Tasks;
 using Ecommerce.BackOffice.Inventory.Domain;
 using Ecommerce.BackOffice.Inventory.Infrastucture;
+using System.Threading.Tasks;
 
 namespace Ecommerce.BackOffice.Inventory.Application
 {

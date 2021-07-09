@@ -34,7 +34,7 @@ namespace Ecommerce.Shop.Orders.Domain
 
             return Price * Quantity;
         }
-        
+
         public void SavePrice()
         {
             Price = Product.Price;
