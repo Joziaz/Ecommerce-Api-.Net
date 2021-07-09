@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ecommerce.BackOffice.Orders.Domain
+{
+    class OrderCantBeModify : Exception
+    {
+        public OrderCantBeModify(string message) : base(message)
+        {
+        }
+    }
+}
