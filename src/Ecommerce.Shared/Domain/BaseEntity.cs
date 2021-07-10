@@ -18,7 +18,7 @@ namespace Ecommerce.Shared.Domain
 
         public void SetCreatedDate()
         {
-            if (Created == null)
+            if (Created == default)
                 Created = DateTime.Now;
         }
 

@@ -1,18 +1,18 @@
 ﻿using Ecommerce.Shared.Domain;
-using Ecommerce.Shared.Domain.Enums;
 using Ecommerce.Shared.Domain.Exeptions;
 using Ecommerce.Shop.Products.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Ecommerce.Shop.Orders.Domain
+namespace Ecommerce.Shop.ShoppingCart.Domain
 {
-    public class Order : BaseEntity
+    public class ShoppingCart : BaseEntity
     {
         public decimal Total { get; private set; }
-        public OrderStatus Status { get; private set; }
-        public List<OrderDetail> Items { get; private set; }
-
+        public List<CartDetail> Items { get; private set; }
         public void CalculateTotal()
         {
             decimal value = 0m;
@@ -25,7 +25,7 @@ namespace Ecommerce.Shop.Orders.Domain
             var item = Items.FirstOrDefault(item => item.Product == product);
             if (item == null)
             {
-                OrderDetail newItem = new OrderDetail(this, product, quantity);
+                CartDetail newItem = new CartDetail(this, product, quantity);
                 Items.Add(newItem);
             }
             else
@@ -34,7 +34,7 @@ namespace Ecommerce.Shop.Orders.Domain
 
         public void RemoveItem(Product product)
         {
-            OrderDetail item = Items.FirstOrDefault(item => item.Product == product);
+            CartDetail item = Items.FirstOrDefault(item => item.Product == product);
             if (item == null)
                 throw new RegistryNotFoundException("Product don't found in the order");
             else

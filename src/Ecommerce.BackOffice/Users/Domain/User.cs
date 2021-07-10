@@ -1,6 +1,6 @@
 ﻿using Ecommerce.Shared.Domain;
 
-namespace BackOffice.Inventory.User.Domain
+namespace Ecommerce.BackOffice.Users.Domain
 {
     public class User : BaseEntity
     {

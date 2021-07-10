@@ -1,20 +1,18 @@
-﻿using Ecommerce.Shared.Domain;
-using Ecommerce.Shop.Products.Domain;
+﻿using Ecommerce.Shop.Products.Domain;
 
-namespace Ecommerce.Shop.Orders.Domain
+namespace Ecommerce.Shop.ShoppingCart.Domain
 {
-    public class OrderDetail 
+    public class CartDetail
     {
-        public readonly Order Order;
+        public readonly ShoppingCart Cart;
         public Product Product { get; private set; }
         public uint Quantity { get; private set; }
         public decimal Price { get; private set; }
         public decimal Total => GetTotal();
 
-
-        public OrderDetail(Order order, Product product, uint quantity)
+        public CartDetail(ShoppingCart cart, Product product, uint quantity)
         {
-            Order = order;
+            Cart = cart;
             Product = product;
             Quantity = quantity;
         }
@@ -33,11 +31,6 @@ namespace Ecommerce.Shop.Orders.Domain
                 return Product.Price * Quantity;
 
             return Price * Quantity;
-        }
-
-        public void SavePrice()
-        {
-            Price = Product.Price;
         }
     }
 }
