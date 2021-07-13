@@ -1,6 +1,7 @@
 ﻿using Ecommerce.Shared.Domain;
 using Ecommerce.Shared.Domain.Exeptions;
 using Ecommerce.Shop.Products.Domain;
+using Ecommerce.Shop.Users.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,10 @@ namespace Ecommerce.Shop.ShoppingCarts.Domain
 {
     public class ShoppingCart : BaseEntity
     {
+        public readonly User User; 
         public decimal Total { get; private set; }
         public List<CartDetail> Items { get; private set; }
+
         public void CalculateTotal()
         {
             decimal value = 0m;

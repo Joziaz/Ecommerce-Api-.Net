@@ -8,5 +8,10 @@ namespace Ecommerce.BackOffice.Infrastructure.Persistance
         public readonly IProductRepository ProductRepository;
         public readonly IStockRepository StockRepository;
 
+        public UnitOfProducts(IProductRepository productRepository, IStockRepository stockRepository)
+        {
+            ProductRepository = productRepository;
+            StockRepository = stockRepository;
+        }
     }
 }
