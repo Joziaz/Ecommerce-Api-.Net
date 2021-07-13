@@ -9,7 +9,7 @@ namespace Ecommerce.Shop.Infrastructure.Persistance
 {
     public class ProductRepository : CRUDRepository<Product>, IProductRepository
     {
-        public ProductRepository(PContext context, DbSet<Product> provider) : base(context)
+        public ProductRepository(PContext context) : base(context)
         {
         }
 
