@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ecommerce.Shop.ShoppingCart.Domain
+namespace Ecommerce.Shop.ShoppingCarts.Domain
 {
     public class ShoppingCart : BaseEntity
     {

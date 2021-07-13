@@ -1,6 +1,6 @@
 ﻿using Ecommerce.Shop.Products.Domain;
 
-namespace Ecommerce.Shop.ShoppingCart.Domain
+namespace Ecommerce.Shop.ShoppingCarts.Domain
 {
     public class CartDetail
     {
