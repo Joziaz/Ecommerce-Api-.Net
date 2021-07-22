@@ -11,12 +11,12 @@ namespace Ecommerce.Shop.ShoppingCarts.Infrastucture
     public class UnitOfShoppingCart : UnitOfWork
     {
         public readonly IUserRepository UserRepository;
-        public readonly IShoppingCartRepository ShoppingCartRepository;
+        public readonly ICartItemRepository CartItemRepository;
 
-        public UnitOfShoppingCart(IUserRepository userRepository, IShoppingCartRepository shoppingCartRepository)
+        public UnitOfShoppingCart(IUserRepository userRepository, ICartItemRepository cartItemRepository)
         {
             UserRepository = userRepository;
-            ShoppingCartRepository = shoppingCartRepository;
+            CartItemRepository = cartItemRepository;
         }
     }
 }

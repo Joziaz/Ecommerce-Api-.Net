@@ -1,18 +1,20 @@
-﻿using Ecommerce.Shop.Products.Domain;
+﻿using Ecommerce.Shared.Domain;
+using Ecommerce.Shop.Products.Domain;
+using Ecommerce.Shop.Users.Domain;
 
 namespace Ecommerce.Shop.ShoppingCarts.Domain
 {
-    public class CartDetail
+    public class CartItem : BaseEntity
     {
-        public readonly ShoppingCart Cart;
+        public readonly User User;
         public Product Product { get; private set; }
         public uint Quantity { get; private set; }
         public decimal Price { get; private set; }
         public decimal Total => GetTotal();
 
-        public CartDetail(ShoppingCart cart, Product product, uint quantity)
+        public CartItem(User user, Product product, uint quantity)
         {
-            Cart = cart;
+            User = user;
             Product = product;
             Quantity = quantity;
         }
