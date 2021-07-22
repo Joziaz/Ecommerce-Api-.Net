@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.Shop.ShoppingCarts.Infrastucture
 {
-    public class ShoppingCartRepository : CRUDRepository<ShoppingCart>
+    public class ShoppingCartRepository : CRUDRepository<ShoppingCart>, IShoppingCartRepository
     {
         public ShoppingCartRepository(PContext context) : base(context)
         {
