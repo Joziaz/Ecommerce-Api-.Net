@@ -16,7 +16,7 @@ namespace Ecommerce.BackOffice.Inventory.Domain
         public void SubstractStock(uint quantity)
         {
             if (Quantity < quantity)
-                throw new NotEnoughStockException("Not enough in stock to complete you order");
+                throw new NotEnoughStockException("Not enough in stock");
 
             Quantity -= quantity;
         }
