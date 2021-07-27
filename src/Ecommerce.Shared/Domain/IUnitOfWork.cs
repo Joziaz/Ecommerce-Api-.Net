@@ -1,13 +1,12 @@
+using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Threading.Tasks;
 
 namespace Ecommerce.Shared.Domain
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork
     {
-        Task BeginTransaction();
-        Task Commit();
         Task SaveChanges();
-        Task RollBack();
+        Task<IDbContextTransaction> BeginTransaction();
     }
 }
