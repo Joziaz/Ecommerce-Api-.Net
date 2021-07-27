@@ -12,7 +12,6 @@ namespace Ecommerce.BackOffice.Inventory.Application
             var stock = await _repository.GetByProduct(product);
             stock.AddToStock(quantity);
             await _repository.Update(stock);
-
         }
 
         public async Task SubstractStock(Product product, uint quantity)

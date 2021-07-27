@@ -23,10 +23,17 @@ namespace Ecommerce.Shop.ShoppingCarts.Domain
         {
             Quantity += quantity;
         }
+
         public void SubstractQuantity(uint quantity)
         {
             Quantity -= quantity;
         }
+
+        public void UpdateQuantity(uint quantity)
+        {
+            Quantity = quantity;
+        }
+        
         public decimal GetTotal()
         {
             if (Price == 0)
