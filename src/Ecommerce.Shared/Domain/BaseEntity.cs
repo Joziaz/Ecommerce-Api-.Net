@@ -11,11 +11,6 @@ namespace Ecommerce.Shared.Domain
 
         public DateTime Modified { get; private set; }
 
-        public void Delete()
-        {
-            IsDeleted = true;
-        }
-
         public void SetCreatedDate()
         {
             if (Created == default)

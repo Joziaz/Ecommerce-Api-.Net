@@ -47,7 +47,6 @@ namespace Ecommerce.Shared.Infrastructure.Persistance
             if (entity == null)
                 throw new RegistryNotFoundException("Registry Not found");
 
-            entity.SetModifiedDate();
             _provider.Remove(entity);
             await _context.SaveChangesAsync();
         }
