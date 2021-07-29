@@ -9,11 +9,12 @@ namespace Ecommerce.Shared.Infrastructure.Persistance
     {
 
         protected readonly DbContext _context;
-        protected DbSet<T> _provider => _context.Set<T>();
+        protected DbSet<T> _provider; 
 
         public CRUDRepository(DbContext context)
         {
             _context = context;
+            _provider = _context.Set<T>();
         }
 
         public async Task<T> Get(int id)
