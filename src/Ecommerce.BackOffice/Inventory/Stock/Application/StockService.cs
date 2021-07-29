@@ -6,7 +6,13 @@ namespace Ecommerce.BackOffice.Inventory.Application
 {
     public class StockService
     {
-        private readonly StockRepository _repository;
+        private readonly IStockRepository _repository;
+
+        public StockService(IStockRepository repository)
+        {
+            _repository = repository;
+        }
+
         public async Task AddToStock(Product product, uint quantity)
         {
             var stock = await _repository.GetByProduct(product);
