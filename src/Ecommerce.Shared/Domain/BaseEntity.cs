@@ -5,8 +5,6 @@ namespace Ecommerce.Shared.Domain
     {
         public int Id { get; private set; }
 
-        public bool IsDeleted { get; private set; }
-
         public DateTime Created { get; private set; }
 
         public DateTime Modified { get; private set; }
