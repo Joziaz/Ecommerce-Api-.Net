@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.Shop.Orders.Infrastucture
 {
-    public class OrderRepository : CRUDRepository<Order>
+    public class OrderRepository : CRUDRepository<Order>, IOrderRepository
     {
         public OrderRepository(DbContext context) : base(context)
         {

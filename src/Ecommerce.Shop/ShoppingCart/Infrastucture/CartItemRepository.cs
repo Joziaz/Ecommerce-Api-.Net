@@ -23,17 +23,18 @@ namespace Ecommerce.Shop.ShoppingCarts.Infrastucture
             return _provider.Where(item => item.User == user);
         }
 
-        public async Task<CartItem> GetCartItemAsync(User user, Product product)
+        public async Task<CartItem> GetCartItem(User user, Product product)
         {
             var cartItem = await _provider.SingleOrDefaultAsync(item => item.User == user && item.Product == product);
             return cartItem;
         }
 
-        public void DeleteUserCartItems(User user)
+        public async Task DeleteUserCartItems(User user)
         {
             var items = GetUserCartItems(user);
 
             _provider.RemoveRange(items);
+             await _context.SaveChangesAsync();
         }
     }
 }

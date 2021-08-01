@@ -7,7 +7,7 @@ namespace Ecommerce.BackOffice.Orders.Domain
 {
     public class Order : BaseEntity
     {
-        public User user { get; private set; }
+        public User User { get; private set; }
         public OrderStatus Status { get; private set; }
         public decimal Total { get; private set; }
         public List<OrderDetail> Items { get; private set; }

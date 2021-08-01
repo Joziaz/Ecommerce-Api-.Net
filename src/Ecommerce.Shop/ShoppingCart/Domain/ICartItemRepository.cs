@@ -11,7 +11,7 @@ namespace Ecommerce.Shop.ShoppingCarts.Domain
     {
         IEnumerable<CartItem> GetUserCartItems(User user);
 
-        Task<CartItem> GetCartItemAsync(User user, Product product);
-        void DeleteUserCartItems(User user);
+        Task<CartItem> GetCartItem(User user, Product product);
+        Task DeleteUserCartItems(User user);
     }
 }

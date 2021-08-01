@@ -1,4 +1,5 @@
 ﻿using Ecommerce.Shared.Infrastructure.Persistance;
+using Ecommerce.Shop.Orders.Domain;
 using Ecommerce.Shop.ShoppingCarts.Domain;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,15 @@ namespace Ecommerce.Shop.ShoppingCarts.Infrastucture
     {
         public readonly IUserRepository UserRepository;
         public readonly ICartItemRepository CartItemRepository;
+        public readonly IOrderRepository OrderRepository;
 
-        public UnitOfShoppingCart(IUserRepository userRepository, ICartItemRepository cartItemRepository)
+        public UnitOfShoppingCart(IUserRepository userRepository,
+                                  ICartItemRepository cartItemRepository,
+                                  IOrderRepository orderRepository)
         {
             UserRepository = userRepository;
             CartItemRepository = cartItemRepository;
+            OrderRepository = orderRepository;
         }
     }
 }
