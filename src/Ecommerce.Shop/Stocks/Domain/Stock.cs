@@ -14,7 +14,7 @@ namespace Ecommerce.Shop.Stocks.Domain
             Quantity = quantity;
         }
 
-        public void SubstractStock(uint quantity)
+        public void SubtractStock(uint quantity)
         {
             if (Quantity < quantity)
                 throw new NotEnoughStockException("Not enough in stock");

@@ -81,7 +81,7 @@ namespace Ecommerce.Shop.ShoppingCarts.Application
                 foreach (var item in items)
                 {
                     order.AddItem(item.Product, item.Quantity);
-                    Tasks.Add(_stockService.SubstractStock(item.Product, item.Quantity));
+                    Tasks.Add(_stockService.SubtractStock(item.Product, item.Quantity));
                 }
 
                 await Task.WhenAll(Tasks);

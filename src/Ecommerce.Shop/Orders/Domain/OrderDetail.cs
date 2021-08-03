@@ -23,7 +23,7 @@ namespace Ecommerce.Shop.Orders.Domain
         {
             Quantity += quantity;
         }
-        public void SubstractQuantity(uint quantity)
+        public void SubtractQuantity(uint quantity)
         {
             Quantity -= quantity;
         }

@@ -24,7 +24,7 @@ namespace Ecommerce.Shop.ShoppingCarts.Domain
             Quantity += quantity;
         }
 
-        public void SubstractQuantity(uint quantity)
+        public void SubtractQuantity(uint quantity)
         {
             Quantity -= quantity;
         }
