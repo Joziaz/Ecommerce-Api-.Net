@@ -47,7 +47,7 @@ namespace Ecommerce.Shop.ShoppingCarts.Application
             var item = await _unit.CartItemRepository.GetCartItem(user, product);
 
             if (item == null)
-                throw new RegistryNotFoundException("Product don't found in the cart");
+                throw new NotFound("Product don't found in the cart");
 
             await _unit.CartItemRepository.Delete(item.Id);
         }
@@ -56,7 +56,7 @@ namespace Ecommerce.Shop.ShoppingCarts.Application
         {
             var item = await _unit.CartItemRepository.GetCartItem(user, product);
             if (item == null)
-                throw new RegistryNotFoundException("Product don't found in the cart");
+                throw new NotFound("Product don't found in the cart");
 
             item.UpdateQuantity(quantity);
             await _unit.CartItemRepository.Update(item);

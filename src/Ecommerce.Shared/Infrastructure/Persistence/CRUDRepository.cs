@@ -9,7 +9,7 @@ namespace Ecommerce.Shared.Infrastructure.Persistance
     {
 
         protected readonly DbContext _context;
-        protected DbSet<T> _provider; 
+        protected readonly DbSet<T> _provider; 
 
         public CRUDRepository(DbContext context)
         {
@@ -22,7 +22,7 @@ namespace Ecommerce.Shared.Infrastructure.Persistance
             var result = await _provider.FindAsync(id);
 
             if (result == null)
-                throw new RegistryNotFoundException("Registry Not found");
+                throw new NotFound("Registry Not found");
 
             return result;
         }
@@ -46,7 +46,7 @@ namespace Ecommerce.Shared.Infrastructure.Persistance
             var entity = await _provider.FindAsync(id);
 
             if (entity == null)
-                throw new RegistryNotFoundException("Registry Not found");
+                throw new NotFound("Registry Not found");
 
             _provider.Remove(entity);
             await _context.SaveChangesAsync();

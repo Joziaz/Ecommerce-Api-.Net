@@ -17,7 +17,7 @@ namespace Ecommerce.BackOffice.Inventory.Infrastucture
             var stock = await _provider.FirstAsync(st => st.Product == product);
 
             if (stock == null)
-                throw new RegistryNotFoundException("Stock of the product not found");
+                throw new NotFound("Stock of the product not found");
 
             return stock;
         }

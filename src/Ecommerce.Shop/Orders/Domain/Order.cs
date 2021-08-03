@@ -49,7 +49,7 @@ namespace Ecommerce.Shop.Orders.Domain
         {
             OrderDetail item = Items.FirstOrDefault(item => item.Product == product);
             if (item == null)
-                throw new RegistryNotFoundException("Product don't found in the order");
+                throw new NotFound("Product don't found in the order");
             else
                 Items.Remove(item);
 
