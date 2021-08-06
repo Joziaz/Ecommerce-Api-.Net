@@ -9,8 +9,7 @@ namespace Ecommerce.Shop.ShoppingCarts.Domain
         public readonly User User;
         public Product Product { get; private set; }
         public uint Quantity { get; private set; }
-        public decimal Price { get; private set; }
-        public decimal Total => GetTotal();
+        public decimal Total => Product.Price * Quantity;
 
         public CartItem(User user, Product product, uint quantity)
         {
@@ -34,12 +33,5 @@ namespace Ecommerce.Shop.ShoppingCarts.Domain
             Quantity = quantity;
         }
         
-        public decimal GetTotal()
-        {
-            if (Price == 0)
-                return Product.Price * Quantity;
-
-            return Price * Quantity;
-        }
     }
 }

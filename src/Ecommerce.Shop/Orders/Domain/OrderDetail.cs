@@ -1,4 +1,5 @@
-﻿using Ecommerce.Shared.Domain;
+﻿using System;
+using Ecommerce.Shared.Domain;
 using Ecommerce.Shop.Products.Domain;
 
 namespace Ecommerce.Shop.Orders.Domain
@@ -8,8 +9,8 @@ namespace Ecommerce.Shop.Orders.Domain
         public readonly Order Order;
         public Product Product { get; private set; }
         public uint Quantity { get; private set; }
-        public decimal Price { get; private set; }
-        public decimal Total => GetTotal();
+        public readonly decimal Price;
+        public decimal Total => Price * Quantity;
 
 
         public OrderDetail(Order order, Product product, uint quantity)
@@ -17,27 +18,21 @@ namespace Ecommerce.Shop.Orders.Domain
             Order = order;
             Product = product;
             Quantity = quantity;
-        }
 
+            Price = product.Price;
+        }
+        
         public void AddQuantity(uint quantity)
         {
             Quantity += quantity;
         }
         public void SubtractQuantity(uint quantity)
         {
+            if (Quantity < quantity)
+                throw new NotEnoughQuantity("Not enough quantity");
+
             Quantity -= quantity;
         }
-        public decimal GetTotal()
-        {
-            if (Price == 0)
-                return Product.Price * Quantity;
 
-            return Price * Quantity;
-        }
-
-        public void SavePrice()
-        {
-            Price = Product.Price;
-        }
     }
 }
