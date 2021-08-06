@@ -34,6 +34,7 @@ namespace Ecommerce.BackOffice.Inventory.Application
         public async Task DeleteProductAsync(int id)
         {
             await Unit.ProductRepository.Delete(id);
+            await Unit.StockRepository.DeleteByProduct(id);
         }
 
     }

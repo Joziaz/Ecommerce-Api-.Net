@@ -1,7 +1,9 @@
+using System;
 using Ecommerce.BackOffice.Inventory.Domain;
 using Ecommerce.Shared.Domain.Exeptions;
 using Ecommerce.Shared.Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Ecommerce.BackOffice.Inventory.Infrastucture
@@ -22,5 +24,12 @@ namespace Ecommerce.BackOffice.Inventory.Infrastucture
             return stock;
         }
 
+        public async Task DeleteByProduct(int id)
+        {
+            var stock = await _provider.SingleOrDefaultAsync(stock => stock.Product.Id == id);
+            await Delete(stock.Id);
+        }
+
     }
+
 }

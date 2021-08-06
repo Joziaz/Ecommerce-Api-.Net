@@ -13,7 +13,7 @@ namespace Ecommerce.BackOffice.Inventory.Application
             _repository = repository;
         }
 
-        public async Task AddToStock(Product product, uint quantity)
+        public async Task AddStock(Product product, uint quantity)
         {
             var stock = await _repository.GetByProduct(product);
             stock.AddToStock(quantity);
