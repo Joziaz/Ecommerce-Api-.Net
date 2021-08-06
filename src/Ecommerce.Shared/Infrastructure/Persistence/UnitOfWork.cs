@@ -8,6 +8,11 @@ namespace Ecommerce.Shared.Infrastructure.Persistance
     {
         protected readonly PContext _context;
 
+        public UnitOfWork(PContext context)
+        {
+            _context = context;
+        }
+
         public async Task<IDbContextTransaction> BeginTransaction()
         {
             return await _context.Database.BeginTransactionAsync();
