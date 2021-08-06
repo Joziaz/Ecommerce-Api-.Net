@@ -17,7 +17,8 @@ namespace Ecommerce.Shop.ShoppingCarts.Infrastucture
 
         public UnitOfShoppingCart(IUserRepository userRepository,
                                   ICartItemRepository cartItemRepository,
-                                  IOrderRepository orderRepository)
+                                  IOrderRepository orderRepository,
+                                  PContext context): base(context)
         {
             UserRepository = userRepository;
             CartItemRepository = cartItemRepository;
