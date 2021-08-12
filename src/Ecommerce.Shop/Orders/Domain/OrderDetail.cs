@@ -6,12 +6,15 @@ namespace Ecommerce.Shop.Orders.Domain
 {
     public class OrderDetail 
     {
-        public readonly Order Order;
+        public Order Order { get; private set; }
         public Product Product { get; private set; }
         public uint Quantity { get; private set; }
-        public readonly decimal Price;
+        public decimal Price { get; private set;  }
         public decimal Total => Price * Quantity;
 
+        public OrderDetail()
+        {
+        }
 
         public OrderDetail(Order order, Product product, uint quantity)
         {

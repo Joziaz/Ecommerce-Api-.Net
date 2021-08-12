@@ -7,6 +7,10 @@ namespace Ecommerce.BackOffice.Inventory.Domain
         public Product Product { get; private set; }
         public uint Quantity { get; private set; }
 
+        public Stock()
+        {
+        }
+
         public Stock(Product product, uint quantity)
         {
             Product = product;

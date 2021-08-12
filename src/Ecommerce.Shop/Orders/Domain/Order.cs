@@ -10,10 +10,14 @@ namespace Ecommerce.Shop.Orders.Domain
 {
     public class Order : BaseEntity
     {
-        public readonly User User;
+        public User User { get; private set; }
         public OrderStatus Status { get; private set; }
         public decimal Total { get; private set; }
         public List<OrderDetail> Items { get; private set; }
+
+        public Order()
+        {
+        }
 
         public Order(User user, OrderStatus status)
         {

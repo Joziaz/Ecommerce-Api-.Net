@@ -12,6 +12,10 @@ namespace Ecommerce.BackOffice.Orders.Domain
         public decimal Total { get; private set; }
         public List<OrderDetail> Items { get; private set; }
 
+        public Order()
+        {
+        }
+
         public void Complete()
         {
             Status = OrderStatus.Complete;

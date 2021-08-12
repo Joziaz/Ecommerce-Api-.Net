@@ -2,7 +2,11 @@
 {
     public class Category
     {
-        public string Name { get; }
+        public string Name { get; private set; }
+
+        public Category()
+        {
+        }
 
         public Category(string name)
         {

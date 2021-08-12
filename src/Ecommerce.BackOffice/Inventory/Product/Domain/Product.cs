@@ -11,6 +11,10 @@ namespace Ecommerce.BackOffice.Inventory.Domain
         public decimal Price { get; private set;}
         public decimal DiscountPrice { get; private set; }
 
+        public Product()
+        {
+        }
+
         public Product(string name, decimal price)
         {
             Name = name;
