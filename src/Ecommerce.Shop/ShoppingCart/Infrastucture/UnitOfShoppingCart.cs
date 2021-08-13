@@ -1,5 +1,6 @@
 ﻿using Ecommerce.Shared.Infrastructure.Persistance;
 using Ecommerce.Shop.Orders.Domain;
+using Ecommerce.Shop.Shared.Infrastucture;
 using Ecommerce.Shop.ShoppingCarts.Domain;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace Ecommerce.Shop.ShoppingCarts.Infrastucture
         public UnitOfShoppingCart(IUserRepository userRepository,
                                   ICartItemRepository cartItemRepository,
                                   IOrderRepository orderRepository,
-                                  PContext context): base(context)
+                                  ShopContext context): base(context)
         {
             UserRepository = userRepository;
             CartItemRepository = cartItemRepository;

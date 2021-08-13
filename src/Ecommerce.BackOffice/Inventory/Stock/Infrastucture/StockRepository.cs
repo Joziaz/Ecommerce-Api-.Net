@@ -5,12 +5,13 @@ using Ecommerce.Shared.Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
+using Ecommerce.BackOffice.Shared.Infrastructure;
 
 namespace Ecommerce.BackOffice.Inventory.Infrastucture
 {
     public class StockRepository : CRUDRepository<Stock>, IStockRepository
     {
-        public StockRepository(DbContext context) : base(context)
+        public StockRepository(BackOfficeContext context) : base(context)
         {
         }
 

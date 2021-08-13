@@ -1,6 +1,7 @@
 using Ecommerce.Shared.Infrastructure.Persistance;
 using Ecommerce.Shop.Domain;
 using Ecommerce.Shop.Products.Domain;
+using Ecommerce.Shop.Shared.Infrastucture;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace Ecommerce.Shop.Infrastructure.Persistance
 {
     public class ProductRepository : CRUDRepository<Product>, IProductRepository
     {
-        public ProductRepository(PContext context) : base(context)
+        public ProductRepository(ShopContext context) : base(context)
         {
         }
 

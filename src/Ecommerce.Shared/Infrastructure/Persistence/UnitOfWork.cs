@@ -1,4 +1,5 @@
 using Ecommerce.Shared.Domain;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System.Threading.Tasks;
 
@@ -6,9 +7,9 @@ namespace Ecommerce.Shared.Infrastructure.Persistance
 {
     public class UnitOfWork : IUnitOfWork
     {
-        protected readonly PContext _context;
+        protected readonly DbContext _context;
 
-        public UnitOfWork(PContext context)
+        public UnitOfWork(DbContext context)
         {
             _context = context;
         }

@@ -1,4 +1,5 @@
 using Ecommerce.BackOffice.Inventory.Domain;
+using Ecommerce.BackOffice.Shared.Infrastructure;
 using Ecommerce.Shared.Infrastructure.Persistance;
 
 namespace Ecommerce.BackOffice.Infrastructure.Persistance
@@ -10,7 +11,7 @@ namespace Ecommerce.BackOffice.Infrastructure.Persistance
 
         public UnitOfProducts(IProductRepository productRepository,
                               IStockRepository stockRepository,
-                              PContext context): base(context)
+                              BackOfficeContext context): base(context)
         {
             ProductRepository = productRepository;
             StockRepository = stockRepository;

@@ -3,7 +3,7 @@ using Ecommerce.Shared.Domain;
 
 namespace Ecommerce.BackOffice.Orders.Domain
 {
-    public class OrderDetail 
+    public class OrderDetail : BaseEntity
     {
         public Order Order { get; private set; }
         public Product Product { get; private set; }

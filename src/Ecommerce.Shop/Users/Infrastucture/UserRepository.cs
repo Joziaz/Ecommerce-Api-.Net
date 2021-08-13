@@ -1,4 +1,5 @@
 ﻿using Ecommerce.Shared.Infrastructure.Persistance;
+using Ecommerce.Shop.Shared.Infrastucture;
 using Ecommerce.Shop.ShoppingCarts.Domain;
 using Ecommerce.Shop.Users.Domain;
 using System;
@@ -11,7 +12,7 @@ namespace Ecommerce.Shop.Users.Infrastucture
 {
     public class UserRepository : CRUDRepository<User>, IUserRepository
     {
-        public UserRepository(PContext context) : base(context)
+        public UserRepository(ShopContext context) : base(context)
         {
         }
     }

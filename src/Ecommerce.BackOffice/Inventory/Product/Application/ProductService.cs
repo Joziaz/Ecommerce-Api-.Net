@@ -1,3 +1,4 @@
+using System.Linq;
 using Ecommerce.BackOffice.Infrastructure.Persistance;
 using Ecommerce.BackOffice.Inventory.Domain;
 using System.Threading.Tasks;
@@ -6,7 +7,7 @@ namespace Ecommerce.BackOffice.Inventory.Application
 {
     public class ProductService
     {
-        public readonly UnitOfProducts Unit;
+        private readonly UnitOfProducts Unit;
 
         public ProductService(UnitOfProducts unit)
         {
@@ -31,10 +32,26 @@ namespace Ecommerce.BackOffice.Inventory.Application
             }
         }
 
-        public async Task DeleteProductAsync(int id)
+        public async Task DeleteProduct(int id)
         {
             await Unit.ProductRepository.Delete(id);
             await Unit.StockRepository.DeleteByProduct(id);
+        }
+
+        public async Task<Product> GetProduct(int id)
+        {
+            var product = await Unit.ProductRepository.Get(id);
+            return product;
+        }
+
+        public async Task<Product[]> GetAll()
+        {
+            return await Unit.ProductRepository.GetAll();
+        }
+
+        public async Task Update(Product product)
+        {
+            await Unit.ProductRepository.Update(product);
         }
 
     }

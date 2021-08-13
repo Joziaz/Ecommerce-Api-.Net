@@ -33,9 +33,6 @@ namespace Ecommerce.Shared.Infrastructure.Persistance
         }
         public async Task Create(T instance)
         {
-            if (instance.Id == 0)
-                throw new InvalidRegistryExecption("Invalid Registry");
-
             instance.SetCreatedDate();
             await _provider.AddAsync(instance);
             await _context.SaveChangesAsync();

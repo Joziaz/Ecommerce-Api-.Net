@@ -1,5 +1,6 @@
 ﻿using Ecommerce.Shared.Infrastructure.Persistance;
 using Ecommerce.Shop.Products.Domain;
+using Ecommerce.Shop.Shared.Infrastucture;
 using Ecommerce.Shop.ShoppingCarts.Domain;
 using Ecommerce.Shop.Users.Domain;
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +15,7 @@ namespace Ecommerce.Shop.ShoppingCarts.Infrastucture
 {
     public class CartItemRepository : CRUDRepository<CartItem>, ICartItemRepository 
     {
-        public CartItemRepository(PContext context) : base(context)
+        public CartItemRepository(ShopContext context) : base(context)
         {
         }
 
