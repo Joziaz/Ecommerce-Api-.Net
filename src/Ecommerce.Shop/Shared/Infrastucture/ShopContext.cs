@@ -1,6 +1,5 @@
 ﻿using Ecommerce.Shop.Orders.Domain;
 using Ecommerce.Shop.Products.Domain;
-using Ecommerce.Shop.Shared.Infrastucture.EntityConfigurations;
 using Ecommerce.Shop.ShoppingCarts.Domain;
 using Ecommerce.Shop.Stocks.Domain;
 using Ecommerce.Shop.Users.Domain;

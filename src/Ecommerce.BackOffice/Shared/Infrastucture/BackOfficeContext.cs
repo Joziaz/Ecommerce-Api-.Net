@@ -1,6 +1,5 @@
 using Ecommerce.BackOffice.Inventory.Domain;
 using Ecommerce.BackOffice.Orders.Domain;
-using Ecommerce.BackOffice.Shared.Infrastucture.EntityConfigurations;
 using Ecommerce.BackOffice.Users.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
